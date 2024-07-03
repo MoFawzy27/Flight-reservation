@@ -1,0 +1,29 @@
+<div *ngIf="flight; else loading" class="flight-details">
+  <div class="container">
+    <div class="flight-image">
+      <!-- Image for countryImg_path -->
+      <img [src]=" flight.countryImg_path" alt="Country Image" />
+    </div>
+    <div class="flight-info">
+      <h4>Title: {{ flight.Title }}</h4>
+      <h4>From: {{ flight.from }}</h4>
+      <h4>Destination: {{ flight.to }}</h4>
+      <h4>Date: {{ flight.DateTime | date : 'dd/MM/yyyy' }}</h4>
+      <h4>Time: {{ flight.DateTime | date : 'HH:mm' }}</h4>
+      <h4>Price: {{ flight.price }}</h4>
+      <h4>Description: {{ flight.description }}</h4>
+      <h4>Available Seats: {{ flight.n_seats }}</h4>
+      <div class="company-info">
+        <!-- Image for img_path -->
+        <h4>Company Name: {{ flight.companyName }}</h4>
+        <img [src]="flight.img_path" alt="Company Image" />
+      </div>
+      <div class="booking-button">
+        <button (click)="navigateToBookingPage()">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <h1 class="alert alert-danger">Loading...</h1>
+</ng-template>

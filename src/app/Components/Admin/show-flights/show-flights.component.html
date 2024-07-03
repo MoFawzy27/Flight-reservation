@@ -1,0 +1,92 @@
+<div class="container mt-4">
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <h3 class="text-center text-white">All Flights</h3>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <input type="text" [(ngModel)]="searchWord" (keyup.enter)="search()" (ngModelChange)="onDestinationChange()" class="form-control" placeholder="Search For Flights...">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="card bg-info text-white text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-plane"></i> Total Flights</h5>
+                    <p class="card-text">{{nFlights}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-primary text-white text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-building"></i> Total Airlines</h5>
+                    <p class="card-text">{{nAirLines}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Img</th>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Source</th>
+                    <th class="text-center">Destination</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Seats</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">AirLines</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flight of flights; let i = index">
+                    <td class="text-center">
+                        <img [src]="flight.img_path" alt="Flight Image" style="width:50px; height: 50px;">
+                    </td>
+                    <td class="text-center">{{ flight.id }}</td>
+                    <td class="text-center">{{ flight.Title }}</td>
+                    <td class="text-center">{{ flight.from }}</td>
+                    <td class="text-center">{{ flight.to }}</td>
+                    <td class="text-center">{{ flight.price }}</td>
+                    <td class="text-center">{{ flight.n_seats }}</td>
+                    <td class="text-center">{{ flight.DateTime }}</td>
+                    <td class="text-center">{{ flight.companyName }}</td>
+
+                    <td class="text-center">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false" (click)="toggleDropdown(i)">
+                                -------------------
+                            </button>
+                            <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen && openDropdownIndex === i }">
+                                <a class="dropdown-item" [routerLink]="'/admin/flights/tickets/' + flight.id">Show Tickets</a>
+                                <a class="dropdown-item" [routerLink]="'/admin/flights/update/' + flight.id">Update</a>
+                                <a class="dropdown-item" style="cursor: pointer;"   (click)="deleteFlight(flight.id)">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+            
+        </table>
+    </div>
+</div>
+
+<div class="popup" id="popup" #myElementRef>
+    <img src="/assets/utils/deleted.png">
+    <h2>Flight Deleted Successfully.</h2>
+</div>
+
+<button class="btn btn-primary float " (click)="redirectAddFlight() ">Add</button>
+

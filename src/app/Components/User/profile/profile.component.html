@@ -1,0 +1,67 @@
+
+<!-- <div class="container card light-style flex-grow-1 container-p-y mt-5 shadow-lg p-5"> -->
+<section class="vh-500 w-500" >
+    <div class="container py-5 ">
+      <div class="row d-flex justify-content-center align-items-center ">
+        <div class="col col-lg-6 mb-4 mb-lg-0">
+          <div class="card mb-3 " style="border-radius: .5rem;">
+            <div class="row g-0 ">
+              <div class="col-md-4 gradient-custom text-center text-white"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                  alt="Avatar" class="img-fluid my-4" style="width: 100px;" />
+                <h5 *ngIf="user">{{user.fName}} {{user.lName}}</h5>
+               <!-- <div class="row gutters"> -->
+                @if(!isAdmin){
+                    <a routerLink="/profile/edit"><i class="far fa-edit m-3"></i></a>
+                    <a href="#" (click)="deleteUser()"><i class="bi bi-trash m-3"></i></a>
+                }
+                
+               <!-- </div> -->
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <h6>Information</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Email</h6>
+                      <p *ngIf="user" class="text-muted">{{user.email}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Phone</h6>
+                      <p *ngIf="user" class="text-muted">{{user.phoneNum}}</p>
+                    </div>
+                  </div>
+                  
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>National ID</h6>
+                      <p *ngIf="user" class="text-muted">{{user.nationalID}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Birth Date</h6>
+                      <p *ngIf="user" class="text-muted">{{user.date_of_birth}}</p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- </div> -->
+
+<div *ngIf="(notify().notificationState | async) as notification">
+    <div class="floating-notification" [style.background-color]="notification.color">
+        <div class="content">
+            {{ notification.message }}
+        </div>
+        <div class="image-container">
+            <img src="/assets/utils/done.png" alt="" width="50px" height="50px">
+        </div>
+    </div>
+</div>

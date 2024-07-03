@@ -1,0 +1,234 @@
+{
+  "User": [
+    {
+      "id": "53f0",
+      "fName": "Abdulrahman",
+      "lName": "Ragab",
+      "nationalID": "12345678911111",
+      "phoneNum": "01149312512",
+      "email": "ar@gmail.com",
+      "date_of_birth": "2000-10-10",
+      "password": "aarr1234"
+    },
+    {
+      "id": "d9ed",
+      "fName": "salma",
+      "lName": "magdi",
+      "nationalID": "12345678912345",
+      "phoneNum": "01234567890",
+      "email": "s@m",
+      "date_of_birth": "2001-10-10",
+      "password": "12345678"
+    },
+    {
+      "id": "e03f",
+      "fName": "admin",
+      "lName": "test",
+      "nationalID": "12345678987455",
+      "phoneNum": "12345698755",
+      "email": "admin@test.com",
+      "date_of_birth": "2004-10-10",
+      "password": "test1234"
+    },
+    {
+      "id": "1",
+      "fName": "renad",
+      "lName": "ahmed",
+      "nationalID": "12345678911111",
+      "phoneNum": "01121000000",
+      "email": "r@gmail.com",
+      "date_of_birth": "2000-10-10",
+      "password": "12345678"
+    },
+    {
+      "id": "d9a2",
+      "fName": "Ali",
+      "lName": "Ahmed",
+      "nationalID": "12345678912345",
+      "phoneNum": "01023456789",
+      "email": "a@a.com",
+      "date_of_birth": "1999-03-04",
+      "password": "12345678"
+    }
+  ],
+  "Flight": [
+    {
+      "id": "75d6",
+      "Title": "See Cairo ",
+      "from": "German",
+      "to": "Cairo",
+      "price": 5000,
+      "DateTime": "2024-05-08T16:49",
+      "description": "A flight from German to Cairo",
+      "n_seats": 555,
+      "img_path": "/assets/CompanyImgs/egypt.png",
+      "companyName": "Egypt Air",
+      "countryImg_path": "/assets/CountryImages/cairo.jpg"
+    },
+    {
+      "id": "75d7",
+      "Title": "See Bali ",
+      "from": "Dubai",
+      "to": "Bali",
+      "price": 7000,
+      "DateTime": "2024-06-08T16:49",
+      "description": "A flight from Dubai to Bali",
+      "n_seats": 555,
+      "img_path": "/assets/CompanyImgs/egypt.png",
+      "companyName": "Egypt Air",
+      "countryImg_path": "/assets/CountryImages/bali.jpeg"
+    },
+    {
+      "id": "75d8",
+      "Title": " Dubai Flight ",
+      "from": "Tokyo",
+      "to": "Dubai",
+      "price": 15500,
+      "DateTime": "2024-01-08T16:49",
+      "description": "A flight from Tokyo to Dubai",
+      "n_seats": 555,
+      "img_path": "/assets/CompanyImgs/Swiss.png",
+      "companyName": "Swiss Air",
+      "countryImg_path": "/assets/CountryImages/dubai.webp"
+    },
+    {
+      "id": "75d9",
+      "Title": "Visit Istanbul",
+      "from": "London",
+      "to": "Istanbul",
+      "price": 5000,
+      "DateTime": "2024-01-08T16:49",
+      "description": "A flight from London to Istanbul",
+      "n_seats": 555,
+      "img_path": "/assets/CompanyImgs/egypt.png",
+      "companyName": "Egypt Air",
+      "countryImg_path": "/assets/CountryImages/istanbul.webp"
+    },
+    {
+      "id": "75d0",
+      "Title": "NY",
+      "from": "Aswan",
+      "to": "New York",
+      "price": 20000,
+      "DateTime": "2024-07-08T16:49",
+      "description": "A flight from Aswan to New York",
+      "n_seats": 555,
+      "img_path": "/assets/CompanyImgs/turkish.png",
+      "companyName": "Turkish Air",
+      "countryImg_path": "/assets/CountryImages/ny.avif"
+    },
+    {
+      "id": "75d1",
+      "Title": "See Milano ",
+      "from": "German",
+      "to": "Milano",
+      "price": 5000,
+      "DateTime": "2024-05-20T16:49",
+      "description": "A flight from German to Milano",
+      "n_seats": 555,
+      "img_path": "/assets/CompanyImgs/Qutar.png",
+      "companyName": "Qutar Air",
+      "countryImg_path": "/assets/CountryImages/milano.webp"
+    },
+    {
+      "id": "75d2",
+      "Title": "Come to Tokyo",
+      "from": "Madrid",
+      "to": "Tokyo",
+      "price": 3500,
+      "DateTime": "2024-08-08T16:49",
+      "description": "A flight from Madrid to Tokyo",
+      "n_seats": 555,
+      "img_path": "/assets/CompanyImgs/Lufthansa.png",
+      "companyName": "morocco Airlines",
+      "countryImg_path": "/assets/CountryImages/tokyo.jpg"
+    }
+  ],
+  "ticket": [
+    {
+      "id": "2731",
+      "user_id": "15c6",
+      "flight_id": "360f",
+      "selectedCabin": "Business Class",
+      "NumberOfTickets": 3,
+      "TotalPrice": 6000,
+      "tickets": {
+        "adults": 3,
+        "teenagers": 0,
+        "children": 0
+      }
+    },
+    {
+      "id": "9097",
+      "user_id": "1",
+      "flight_id": "75d2",
+      "selectedCabin": "Economy Class",
+      "NumberOfTickets": 3,
+      "TotalPrice": 10500,
+      "tickets": {
+        "adults": 2,
+        "children": 1
+      }
+    },
+    {
+      "id": "0827",
+      "user_id": "d9ed",
+      "flight_id": "75d6",
+      "selectedCabin": "Premium Economy Class",
+      "NumberOfTickets": 4,
+      "TotalPrice": 20000,
+      "tickets": {
+        "adults": 3,
+        "children": 1
+      }
+    },
+    {
+      "id": "4926",
+      "user_id": "1",
+      "flight_id": "75d7",
+      "selectedCabin": "Business Class",
+      "NumberOfTickets": 4,
+      "TotalPrice": 28000,
+      "tickets": {
+        "adults": 3,
+        "children": 1
+      }
+    },
+    {
+      "id": "6634",
+      "user_id": "d9ed",
+      "flight_id": "75d8",
+      "selectedCabin": "Business Class",
+      "NumberOfTickets": 3,
+      "TotalPrice": 46500,
+      "tickets": {
+        "adults": 3,
+        "children": 0
+      }
+    },
+    {
+      "id": "2604",
+      "user_id": "1",
+      "flight_id": "75d9",
+      "selectedCabin": "Business Class",
+      "NumberOfTickets": 4,
+      "TotalPrice": 20000,
+      "tickets": {
+        "adults": 3,
+        "children": 1
+      }
+    },
+    {
+      "id": "0209",
+      "user_id": "d9a2",
+      "flight_id": "75d8",
+      "selectedCabin": "Premium Economy Class",
+      "NumberOfTickets": 5,
+      "TotalPrice": 77500,
+      "tickets": {
+        "adults": 5,
+        "children": 0
+      }
+    }
+  ]
+}

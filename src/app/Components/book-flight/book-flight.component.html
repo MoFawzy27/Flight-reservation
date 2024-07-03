@@ -1,0 +1,57 @@
+<div class="container card light-style flex-grow-1 container-p-y mt-5 shadow-lg p-5">
+  <div class="container">
+    <div class="content">
+      <div class="droplist">
+        <h5>Cabin Class:</h5>
+    
+        <select id="classSelect" [(ngModel)]="selectedCabin">
+          <option>Economy Class</option>
+          <option>Premium Economy Class</option>
+          <option>Business Class</option>
+          <option>First Class</option>
+        </select>
+      </div>
+
+      <div class="adults">
+        <h5>Adult(16)</h5>
+        
+
+        <button type="button" class="Subtract" (click)="Subtract(1)">-</button>
+        <h4>{{ adultsTickets }}</h4>
+        <button type="button" class="add" (click)="add(1)">+</button>
+      </div>
+
+      <div class="children">
+        <h5>Children</h5>
+        <button type="button" class="Subtract" (click)="Subtract(3)">-</button>
+        <h4>{{ ChildrenTickets }}</h4>
+        <button type="button" class="add" (click)="add(3)">+</button>
+      </div>
+
+      <hr>
+      
+      <div class="total-price">
+        <h5>Total Number of Tickets: {{ NumberOfTickets }}</h5>
+
+        <h5>Total Price: {{ TotalPrice | currency : "USD" }}</h5>
+      </div>
+    </div>
+
+  <!--prepare mini window to confirm el 7agz-->
+  <div class="booking-button">
+    <button (click)="toggleMiniWindow()">Confirm</button>
+  </div>
+
+  <p *ngIf="!validation">Must fill all fields</p>
+ 
+  <app-confirm-book
+    *ngIf="flag"
+    [selectedCabin]="selectedCabin"
+    [NumberOfTickets]="NumberOfTickets"
+    [adultsTickets]="adultsTickets"
+    [ChildrenTickets]="ChildrenTickets"
+    [TotalPrice]="TotalPrice"
+    (closeMiniWindowEvent)="closeMiniWindow()"
+  ></app-confirm-book>
+</div>
+</div>

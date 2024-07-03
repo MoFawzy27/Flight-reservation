@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  img{
+    width: 100%;
+  }
+  h2{
+    text-align: center;
+    padding-top: 20px;
+    font-family: cursive;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    border: none;
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+.place {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: px;
+    background-color: rgba(19, 12, 1, 0.233);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+ }
+ .place-span{
+    font-family: cursive;
+ }
+
+
+ nav {
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; 
+}
+nav img {
+  width: 190px; 
+  height: 50px; 
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  float: right;
+  display: flex;
+  /* justify-content: flex-end;
+  align-items:flex-end;  */
+}
+nav ul li {
+  margin-left: 20px;
+}
+nav ul li:first-child {
+  margin-left: 0; 
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+.Logout{
+  cursor: pointer;
+}
+

@@ -1,0 +1,73 @@
+<body>
+  
+  <div class="left">
+    <div class="form-container">
+      <h2>Sign In</h2>
+      <h5>Welcome back</h5>
+      <form [formGroup]="signinForm" class="form">
+        <div class="form-group">
+          <input
+            class="form-control"
+            #email
+            placeholder="Email"
+            type="email"
+            formControlName="email"
+          />
+          <p class="text-danger">{{ getErrorMessage(signinForm, 'email', 'required') }}</p>
+    <p class="text-danger">{{ getErrorMessage(signinForm, 'email', 'email') }}</p>
+            
+        </div>
+        <div class="form-group">
+          <div class="password-input-wrapper">
+            <input
+              #password
+              class="form-control"
+              type="{{ showPassword ? 'text' : 'password' }}"
+              placeholder="Password"
+              id="pass"
+              formControlName="password"
+            />
+            <span
+              class="fa"
+              [ngClass]="{
+                'fa-eye': !showPassword,
+                'fa-eye-slash': showPassword
+              }"
+              (click)="togglePasswordVisibility()"
+            ></span>
+          </div>
+          <p class="text-danger">{{ getErrorMessage(signinForm, 'password', 'required') }}</p>
+          <p class="text-danger">{{ getErrorMessage(signinForm, 'password', 'minlength') }}</p>
+         
+
+        </div>
+
+        <button
+          class="form-group btn btn-outline-primary"
+          type="submit"
+          (click)="onSubmit()"
+        >
+          Sign In
+        </button>
+        <p>Don't have an account? <a routerLink="/sign-up"> Sign Up</a></p>
+      </form>
+    </div>
+  </div>
+  <div class="right">
+    <img class="image" src="/assets/images/signin.jpg" alt="Your Image" />
+  </div>
+
+</body>
+
+<div *ngIf="(notify().notificationState | async) as notification">
+  <div class="floating-notification" [style.background-color]="notification.color">
+      <div class="content">
+          {{ notification.message }}
+      </div>
+      <div class="image-container">
+          <img [src]="notification.color === 'green'? '/assets/utils/done.png' : '/assets/utils/deleted.png'" 
+          alt="" width="50px" height="50px">
+      </div>
+  </div>
+</div>
+

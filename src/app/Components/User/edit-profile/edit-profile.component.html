@@ -1,0 +1,126 @@
+<div class="container card light-style flex-grow-1 container-p-y  shadow-lg p-5">
+
+  <h4 class="font-weight-bold pt-2 mb-2 text-primary">
+    Account settings
+  </h4>
+
+    <div class="card overflow-hidden  rounded">
+
+      <div class="row no-gutters row-bordered row-border-light ">
+        <div class="col-md-3 p-3 mb-5">
+          <div class="list-group list-group-flush account-settings-links ">
+            <button class="nav-link list-group-item list-group-item-action rounded active" id="account-general-tab" data-bs-toggle="pill" data-bs-target="#account-general" type="button" role="tab" aria-controls="account-general" aria-selected="true">General Info</button>
+            <button class="nav-link list-group-item list-group-item-action rounded" id="change-password-tab" data-bs-toggle="pill" data-bs-target="#account-change-password" type="button" role="tab" aria-controls="account-change-password" aria-selected="false">Change Password</button>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="tab-content">
+
+            <div  class="tab-pane fade active show" id="account-general" role="tabpanel" aria-labelledby="account-general-tab" tabindex="0">
+
+              <hr class="border-light m-0">
+
+              <div class="card-body row gutters">
+               
+                  <form [formGroup]="account_info_form" class="form"> 
+                    <div class="form-group">
+                      <label class="form-label">First Name</label>
+                      <input formControlName="fName" type="text" class="form-control mb-1" >
+                      <p class="alert alert-danger" *ngIf="!FNameValid"> Name Length &lt; 3 </p>
+                    </div>
+    
+                    <div class="form-group">
+                      <label class="form-label">Last Name</label>
+                      <input formControlName="lName" type="text" class="form-control mb-1" >
+                      <p class="alert alert-danger" *ngIf="!LNameValid"> Name Length &lt; 3 </p>
+                    </div>
+    
+                    <div class="form-group">
+                      <label class="form-label">E-mail</label>
+                      <input formControlName="email" type="text" class="form-control mb-1" >
+                      <p class="alert alert-danger" *ngIf="!EmailValid"> E-mail not valid </p>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">nationalID</label>
+                      <input formControlName="nationalID" type="text" class="form-control mb-1" >
+                      <p class="alert alert-danger" *ngIf="!nationalIDValid"> It must be 14 digits </p>
+                    </div>
+
+                    
+                      <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <label class="form-label">Phone</label>
+                        <input formControlName="phoneNum" type="text" class="form-control mb-1" id="phone" >
+                        <p class="alert alert-danger" *ngIf="!PhoneValid"> Phone Length &lt; 11 </p>
+                      </div>
+                    
+                      <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <label class="form-label">Date of Birth</label>
+                        <input formControlName="date_of_birth" type="date" class="form-control mb-1" id="DateOfBirth" [max]="max_date" >
+                        <p class="alert alert-danger" *ngIf="!date_of_birthValid"> Date not Valid </p>
+
+                      </div>
+                  </form>
+               
+
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="account-change-password" role="tabpanel" aria-labelledby="change-password-tab" tabindex="0">
+                <div class="card-body pb-2">
+                  <form [formGroup]="change_pass_form" class="form">
+                    <div class="form-group">
+                      <label class="form-label">Current password</label>
+                      <input formControlName="oldPass" type="password" class="form-control">
+                      <p class="alert alert-danger" *ngIf="!PassValid"> Password required</p>
+                      <p class="alert alert-danger" *ngIf="change_pass_form.controls['oldPass'].hasError('passwordNotCorrect')"> Password not correct </p>
+
+                    </div>
+              
+                    <div class="form-group">
+                      <label class="form-label">New password</label>
+                      <input formControlName="newPass" type="password" class="form-control">
+                    </div>
+              
+                    <div class="form-group">
+                      <label class="form-label">Repeat new password</label>
+                      <input formControlName="repeatNPass" type="password" class="form-control">
+                      <p class="alert alert-danger" *ngIf="change_pass_form.controls['repeatNPass'].hasError('passwordMismatch')"> Password doesn't match  </p>
+                    </div>
+
+                    <!-- <div class="text-end mt-3">
+                      <input (click)="changePass()" class="btn btn-primary" type="submit" value="Change password" [disabled] ="!change_pass_form.valid">
+                  </div> -->
+              
+                  </form>
+                  
+                </div>
+              </div>
+        
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-end mt-4">
+      <button type="button" class="btn btn-primary" (click)="SaveChanges()" [disabled]="!account_info_form.valid">Save changes</button>
+      <button type="button" class="btn btn-default" routerLink="/">Cancel</button>
+    </div>
+
+  </div>
+
+
+  <div *ngIf="(notify().notificationState | async) as notification">
+    <div class="floating-notification" [style.background-color]="notification.color">
+        <div class="content">
+            {{ notification.message }}
+        </div>
+        <div class="image-container">
+            <img src="/assets/utils/done.png" alt="" width="50px" height="50px">
+        </div>
+    </div>
+  </div>
+
+
+

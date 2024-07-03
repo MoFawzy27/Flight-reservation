@@ -1,0 +1,100 @@
+<body>
+    <div class="left">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form [formGroup]="signupForm" class="form">
+                <div class="form-group"> 
+                    <input #fName class="form-control" 
+                    type="text" placeholder="First Name"
+                    formControlName="fName">
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'fName', 'required') }}</p>
+    <p class="text-danger">{{ getErrorMessage(signupForm, 'fName', 'minlength') }}</p>
+                </div>
+            
+                <div class="form-group ">
+                    <input #lName class="form-control" 
+                    type="text" placeholder="Last Name"
+                    formControlName="lName">
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'lName', 'required') }}</p>
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'lName', 'minlength') }}</p>
+                </div>
+            
+                <div class="form-group">
+                    <input #nationalID class="form-control" 
+                    type="text"  placeholder="National ID"
+                    formControlName="nationalID">
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'nationalID', 'required') }}</p>
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'nationalID', 'minlength') }}</p>
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'nationalID', 'pattern') }}</p>
+
+                </div>
+            
+                <div class="form-group">
+                    <input #phoneNum class="form-control" 
+                    type="text"  placeholder="Phone Number"
+                    formControlName="phoneNum">
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'phoneNum', 'required') }}</p>
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'phoneNum', 'minlength') }}</p>
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'phoneNum', 'pattern') }}</p>
+                </div>
+            
+                <div class="form-group">
+                    <input #email class="form-control" 
+                    type="email" placeholder="Email"
+                    formControlName="email">
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'email', 'required') }}</p>
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'email', 'email') }}</p>               
+                    </div>
+            
+                    <div class="form-group">
+                        <input #date_of_birth class="form-control" 
+                        type="date" placeholder="yyyy-MM-dd"
+                        formControlName="date_of_birth">
+                        <p class="text-danger">{{ getErrorMessage(signupForm, 'date_of_birth', 'required') }}</p>
+                        <p class="text-danger">{{ getErrorMessage(signupForm, 'date_of_birth', 'date') }}</p>
+                    </div>
+            
+                <div class="form-group">
+                    <div class="password-input-wrapper">
+                        <input
+                          #password
+                          class="form-control"
+                          type="{{ showPassword ? 'text' : 'password' }}"
+                          placeholder="Password"
+                          id="pass"
+                          formControlName="password"
+                        />
+                        <span
+                          class="fa"
+                          [ngClass]="{
+                            'fa-eye': !showPassword,
+                            'fa-eye-slash': showPassword
+                          }"
+                          (click)="togglePasswordVisibility()"
+                        ></span>
+                      </div>
+                    <p class="text-danger">{{ getErrorMessage(signupForm, 'password', 'required') }}</p>
+    <p class="text-danger">{{ getErrorMessage(signupForm, 'password', 'minlength') }}</p>
+                </div>
+                <button class="form-group btn btn-outline-primary" 
+                type="submit" 
+                (click)="onSubmit()">Sign Up</button>
+                <p>Already have an account? <a routerLink="/sign-in"> Sign In</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="right">
+        <img class="image" src="/assets/images/signup.jpg" alt="Your Image">
+    </div>
+    <div *ngIf="(notify().notificationState | async) as notification">
+        <div class="floating-notification" [style.background-color]="notification.color">
+            <div class="content">
+                {{ notification.message }}
+            </div>
+            <div class="image-container">
+                <img [src]="notification.color === 'green'? '/assets/utils/done.png' : '/assets/utils/deleted.png'" 
+                alt="" width="50px" height="50px">
+            </div>
+        </div>
+      </div>
+  </body>

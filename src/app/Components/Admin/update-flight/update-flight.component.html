@@ -1,0 +1,107 @@
+@if(flight){
+<div>
+
+    <form #flightForm="ngForm">
+        <div class="row">
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="title">Title:</label>
+                    <input type="text" [(ngModel)]="flight.Title" class="form-control" id="title" name="title" required>
+                    <div *ngIf="flightForm.controls['title'].invalid && (flightForm.controls['title'].dirty || flightForm.controls['title'].touched)" class="text-danger">
+                        Title is required
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="from">From:</label>
+                    <input type="text" [(ngModel)]="flight.from" class="form-control" id="from" name="from" required>
+                    <div *ngIf="flightForm.controls['from'].invalid && (flightForm.controls['from'].dirty || flightForm.controls['from'].touched)" class="text-danger">
+                        From is required
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="to">To:</label>
+                    <input type="text" [(ngModel)]="flight.to" class="form-control" id="to" name="to" required>
+                    <div *ngIf="flightForm.controls['to'].invalid && (flightForm.controls['to'].dirty || flightForm.controls['to'].touched)" class="text-danger">
+                        To is required
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="price">Price:</label>
+                    <input type="number" [(ngModel)]="flight.price" class="form-control" id="price" name="price" required>
+                    <div *ngIf="flightForm.controls['price'].invalid && (flightForm.controls['price'].dirty || flightForm.controls['price'].touched)" class="text-danger">
+                        Price is required
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="dateTime">Date & Time:</label>
+                    <input type="datetime-local" [(ngModel)]="flight.DateTime" class="form-control" id="dateTime" name="dateTime" required>
+                    <div *ngIf="flightForm.controls['dateTime'].invalid && (flightForm.controls['dateTime'].dirty || flightForm.controls['dateTime'].touched)" class="text-danger">
+                        Date & Time is required
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="description">Description:</label>
+                    <textarea [(ngModel)]="flight.description" class="form-control" id="description" name="description" required></textarea>
+                    <div *ngIf="flightForm.controls['description'].invalid && (flightForm.controls['description'].dirty || flightForm.controls['description'].touched)" class="text-danger">
+                        Description is required
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row-last">
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="nSeats">Number of Seats:</label>
+                    <input type="number" [(ngModel)]="flight.n_seats" class="form-control" id="nSeats" name="nSeats" required>
+                    <div *ngIf="flightForm.controls['nSeats'].invalid && (flightForm.controls['nSeats'].dirty || flightForm.controls['nSeats'].touched)" class="text-danger">
+                        Number of Seats is required
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="company">Company Name:</label>
+                    <select class="form-control" id="company" [(ngModel)]="flight.companyName" name="companyName" required>
+                         <option value="Egypt Air">Egypt Air</option>
+                         <option value="QATAR Airways">QATAR Airways</option>
+                         <option value="Fly Emirates">Fly Emirates</option>
+                         <option value="Turkish Airways">Turkish Airways</option>
+                         <option value="Air France">Air France</option>
+                         <option value="Swiss Air">Swiss Air</option>
+                         <option value="Lufthansa airways">Lufthansa airways</option>
+                         <option value="morocco Airlines">morocco Airlines</option>
+                         <option value="American Airlines">American Airlines</option>
+                         <option value="British Airways">British Airways</option>
+                       </select>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="add-btn">
+            <button (click)="update() " class="btn btn-primary ">Update</button>
+        </div>
+    </form>
+    <div class="popup" id="popup" #myElementRef>
+        <img src="/assets/utils/done.png">
+        <h2>Thank You!</h2>
+        <p>Flight updated sucessfully. Thanks!</p>
+        
+    </div>
+</div>
+
+
+
+
+}

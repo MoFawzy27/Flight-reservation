@@ -1,0 +1,50 @@
+<div class="mini-window">
+  <a class="close-button" (click)="closeMiniWindow()" routerLink="/booking"
+    >×</a
+  >
+  <br>
+
+  <div class="confirmation-details">
+    <div class="ticket-container">
+    <h5><strong>Cabin Class:</strong> {{ selectedCabin }}</h5>
+    </div>
+    <div class="ticket-container">
+      <h5 class="ticket-type">Adults</h5>
+      <h5 class="ticket-count">{{ adultsTickets }}</h5>
+    </div>
+    <div class="ticket-container">
+      <h5 class="ticket-type">Children</h5>
+      <h5 class="ticket-count">{{ ChildrenTickets }}</h5>
+    </div>
+    <hr>
+
+    <div class="ticket-container">
+    <h5><strong>Number of Tickets:</strong> {{ NumberOfTickets }}</h5>
+    </div>
+
+    <div class="ticket-container">
+    <h5><strong>Total Price:</strong> {{ TotalPrice | currency : "USD" }}</h5>
+</div>
+  </div>
+  <button class="confirm-button" (click)="Add()">Confirm Booking</button>
+  <div
+    class="confirmation-message"
+    *ngIf="confirm()"
+    routerLink="allflights"
+  ></div>
+</div>
+
+<div *ngIf="notify().notificationState | async as notification">
+  <div
+    class="floating-notification"
+    [style.background-color]="notification.color"
+  >
+    <div class="content">
+      {{ notification.message }}
+    </div>
+    <div class="image-container">
+      <img src="/assets/utils/done.png" alt="" width="50px" height="50px" />
+    </div>
+       
+  </div>
+</div>

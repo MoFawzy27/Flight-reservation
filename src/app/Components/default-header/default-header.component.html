@@ -1,0 +1,42 @@
+<!-- <nav>
+    <img src="/assets/CompanyImgs/logo.png" alt="Logo" />
+    <div >
+      <ul >
+        <li><a href="/">Home</a></li>
+        <li><a routerLink="about">About</a></li>
+        <li><a routerLink="contact">Contact</a></li>
+        <li><a routerLink="sign-up">Sign Up</a></li>
+      </ul>
+      
+    </div>
+  </nav> -->
+
+  <!-- <nav>
+    <img src="/assets/CompanyImgs/logo.png" alt="Logo" />
+    <div>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li *ngIf="!isAdmin"><a routerLink="/about">About</a></li>
+        <li *ngIf="!isAdmin"><a routerLink="/contact">Contact</a></li>
+        <li *ngIf="!isAdmin"><a routerLink="/sign-up">Sign Up</a></li>
+        <li *ngIf="isAdmin"><a routerLink="/admin">Admin Dashboard</a></li>
+        <li *ngIf="isAdmin"><a routerLink="/admin/flights/add">Admin Settings</a></li>
+      </ul>
+    </div>
+  </nav> -->
+<nav>
+  <img src="/assets/CompanyImgs/logo.png" alt="Logo" />
+  <div>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li *ngIf="authStatus === 'guest'"><a routerLink="/about">About</a></li>
+      <li *ngIf="authStatus === 'guest'"><a routerLink="/contact">Contact</a></li>
+      <li *ngIf="authStatus === 'guest'"><a routerLink="/sign-up">Sign Up</a></li>
+      <li *ngIf="authStatus === 'admin'"><a routerLink="/admin"> Dashboard</a></li>
+      <li *ngIf="authStatus === 'user'"><a routerLink="/allflights">All Flights</a></li>
+      <li *ngIf="authStatus === 'user'"><a routerLink="/my-trips">My Trips</a></li>
+      <li *ngIf="authStatus === 'user'"><a routerLink="/profile">Profile</a></li>
+      <li *ngIf="authStatus !== 'guest'"><a (click)="logout()" class="Logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>

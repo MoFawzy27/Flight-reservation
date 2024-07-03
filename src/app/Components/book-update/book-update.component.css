@@ -1,0 +1,121 @@
+.container {
+    flex-direction: column;
+    padding: 20px;
+    display: flex;
+    margin: auto;
+}
+
+
+.adults{
+    margin-top: 1%;
+}
+
+.droplist, .adults, .teenage, .children, .total-price, .booking-button {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    text-align: center;
+
+}
+
+.droplist select {
+    padding: 5px;
+}
+select option{
+    font-size: 14pt;
+}
+#classSelect{
+    margin-left: 3%;
+    margin-right: 15%;
+    width: 80%;
+    color:  rgb(36, 36, 88);
+    border-color:  rgb(36, 36, 88);
+}
+
+
+.adults h5, .children h5, .droplist h5, .total-price h5 {
+    margin: 0 10px 0 0;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+.adults h4, .children h4{
+    text-align: left;
+    margin-right: 10%;
+    color:  rgb(36, 36, 88);
+
+}
+
+button.add, button.Subtract {
+
+    width: 10%;
+    height: 30px;
+    margin-right: 15%;
+}
+ button.add, button.Subtract {
+    padding: 5px 10px;
+    background-color: rgb(36, 36, 88);
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10 10px;
+    
+    font-size: 18px;
+    line-height: 18px;
+
+  }
+
+.total-price {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.booking-button {
+    margin-top: 20px;
+    width: 20%;
+}
+
+.booking-button button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(36, 36, 88);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.booking-button button:hover {
+    background-color: rgb(36, 36, 88);
+}
+
+p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .droplist, .teenage, .children, .total-price, .booking-button {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .droplist select, button {
+        margin: 10px 0;
+    }
+
+    .booking-button button {
+        width: 100%;
+    }
+}
+.content {
+    width: 100%;
+    text-align: center;
+    color: rgb(36, 36, 88);
+
+}

@@ -1,0 +1,80 @@
+.flight-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.error-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%; 
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid rgb(228, 228, 243);
+    width: calc(100% - 70px); 
+}
+.search-bar input::placeholder {
+    text-align: center; 
+}
+.search-bar button {
+    background-color: rgb(36, 36, 88);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.card-founder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    /* background-color: #f8f4f4; */
+    background-color: rgba(248, 244, 244, 0.233);
+    border-radius: 10px;
+}
+
+.card-wrapper {
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 100%;
+    border: 1px solid #271414;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h6 {
+    margin-bottom: 5px;
+}

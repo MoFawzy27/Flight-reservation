@@ -1,0 +1,84 @@
+<div class="container card light-style flex-grow-1 container-p-y shadow p-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="previous-tab" data-bs-toggle="tab" data-bs-target="#previous" role="tab" aria-controls="previous" aria-selected="true">Previous trips</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="upcomming-tab" data-bs-toggle="tab" data-bs-target="#upcomming" role="tab" aria-controls="upcomming" aria-selected="false">Upcomming Trips</a>
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-content trips-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="previous" role="tabpanel" aria-labelledby="previous-tab">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>ticket #</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Date</th>
+                                    <th>number of seats</th>
+                                    <th>Total</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                               @for (ticket of Previoustickets; track ticket.id) {
+                                <tr>
+                                    <td>{{ticket.id}}</td>
+
+                                    <td><span>{{ticket.flight.from}}</span></td>
+                                    <td><span>{{ticket.flight.to}}</span></td>
+                                    <td>{{ticket.date}}</td>
+                                    <td><span>{{ticket.NumberOfTickets}}</span></td>
+                                    <td><span>${{ticket.TotalPrice}}</span></td>
+                                    
+                                </tr>
+                               }
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                  
+                </div>
+                <div class="tab-pane fade" id="upcomming" role="tabpanel" aria-labelledby="upcomming-tab">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>ticket #</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Date</th>
+                                    <th>number of seats</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               @for (ticket of UpCommingtickets; track ticket.id) {
+                                <tr>
+                                    <td><a class="navi-link" routerLink="/updateBooking/{{ticket.id}}">{{ticket.id}}</a></td>
+                                    <td><span>{{ticket.flight.from}}</span></td>
+                                    <td><span>{{ticket.flight.to}}</span></td>
+                                    <td>{{ticket.date}}</td>
+                                    <td><span>{{ticket.NumberOfTickets}}</span></td>
+                                    <td><span>${{ticket.TotalPrice}}</span></td>
+
+                                </tr>
+                               }
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                            
+        </div>
+    </div>
+   
+   
+</div>
+
+        

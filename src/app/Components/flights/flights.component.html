@@ -1,0 +1,25 @@
+
+<div class="flight-page">
+    <div class="error-container">
+      <div class="alert alert-danger" *ngIf="searchError || flightsError">{{ searchError || flightsError }}</div>
+    </div>
+  
+    <div class="search-bar">
+        <input type="text" [(ngModel)]="searchWord" (keyup.enter)="search()" (ngModelChange)="onDestinationChange()" placeholder="Search for Flights...">
+
+    </div>
+
+    <div class="card-founder">
+        <ng-container *ngIf="flights.length!=0; else searched">
+            <div *ngFor="let flight of flights; let i = index">
+                <app-flight [oneFlight]="flight"></app-flight>
+            </div>
+        </ng-container>
+        <ng-template #searched>
+            <div>
+                <p>No Flights Found</p>
+            </div>
+        </ng-template>
+    </div>
+  </div>
+   

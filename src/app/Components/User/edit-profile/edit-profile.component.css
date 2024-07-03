@@ -1,0 +1,75 @@
+
+/* body{
+    background: #f5f5f5;
+    margin-top:20px;
+} */
+
+
+.btn-default {
+    border-color: rgba(24,28,33,0.1);
+    background: rgba(0,0,0,0);
+    color: #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #26B4FF;
+    background: transparent;
+    color: #26B4FF;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.text-light {
+    color: #babbbc !important;
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+    /* background-color: lightblue;  */
+}
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5455 !important;
+}
+
+
+.floating-notification {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out, slideOut 0.5s 2.5s ease-out forwards;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    /* Use flexbox */
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+  }

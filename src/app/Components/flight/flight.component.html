@@ -1,0 +1,25 @@
+
+<div class="card-container">
+    <div class="card-wrapper" >
+      <a [routerLink]="'/allflights/' + oneFlight.id">
+        <img
+        [src]="oneFlight.countryImg_path"
+          class="card-img-top"
+          alt="Flight Image"
+        />
+      </a>
+      
+      <div class="card-body">
+        <h6>Title: {{ oneFlight.Title }}</h6>
+        <h6>Source: {{ oneFlight.from }}</h6>
+        <h6>Destination: {{ oneFlight.to }}</h6>
+        <h6>Date: {{ oneFlight.DateTime | date : "dd/MM/yyyy" }}</h6>
+        <h6>Time: {{ oneFlight.DateTime | date : "HH:mm" }}</h6>
+        <h6>Price: {{ oneFlight.price }}</h6>
+        <h6>Available Seats: {{ oneFlight.n_seats }}</h6>
+      </div>
+    </div>
+  </div>
+ 
+    
+
